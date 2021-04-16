@@ -91,7 +91,7 @@ mycursor.execute(sql)
 tmprr = mycursor.fetchone()
 periods=tmprr[0]
 #commented to save memeory
-print(f'periods={periods}')
+# print(f'periods={periods}')
 t=time.localtime()
 
 for j in range(1,periods+1):    

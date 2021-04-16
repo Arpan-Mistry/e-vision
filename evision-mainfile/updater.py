@@ -39,7 +39,7 @@ while True:
             if enroll_name_img ==None:
                 #commented to save memeory
                 # print("All entries are updated")
-                print("calling facerecog function")
+                # print("calling facerecog")
                 os.system('python facerecog.py')
                 exit(0)
 

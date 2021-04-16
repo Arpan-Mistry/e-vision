@@ -17,8 +17,7 @@ password="#vlZnIKN9ooYfj5a",
 database="db1"
 )
 
-# who says coments are useless 
-
+# who says comments are useless 
 
 
 

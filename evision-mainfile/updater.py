@@ -89,7 +89,7 @@ while True:
             temp = open('temp.txt', 'w')
             with open("facerecog.py", "r") as f:
                 for a in f:
-                    if a.startswith("# who says coments are useless"):
+                    if a.startswith("# who says comments are useless"):
                         a=a+"\n"+"__"+enroll_str+"_image = face_recognition.load_image_file(os.path.join(basedir,\""+"student_photos/"+enroll_str+".jpg\"))\n"+"__"+enroll_str+"_face_encoding = face_recognition.face_encodings(__"+enroll_str+"_image)[0]\n"
                     temp.write(a)
             temp.close()

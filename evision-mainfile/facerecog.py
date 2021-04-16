@@ -19,18 +19,15 @@ database="db1"
 
 # who says coments are useless 
 
-__1_image = face_recognition.load_image_file(os.path.join(basedir,"student_photos/1.jpg"))
-__1_face_encoding = face_recognition.face_encodings(__1_image)[0]
+
 
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
-__1_face_encoding,
 ]
 
 
 known_face_names = [
-"__1",
 ]
 
 # Initialize 
@@ -93,6 +90,7 @@ sql = "SELECT np FROM noper"
 mycursor.execute(sql)    
 tmprr = mycursor.fetchone()
 periods=tmprr[0]
+#commented to save memeory
 print(f'periods={periods}')
 t=time.localtime()
 
@@ -141,9 +139,11 @@ for j in range(1,periods+1):
 while(True):
     m=time.localtime()
     for i in range(1,periods+1):
+        if(emini[i])==0:
+            emini[i]=60
         m=time.localtime()
-        if is_between(str(m.tm_hour)+":"+str(m.tm_min),(str(shour[i])+":"+str(smini[i]),str(ehour[i])+":"+str(emini[i]))):
-            video_capture = cv2.VideoCapture(0)
+        if is_between(str(m.tm_hour)+":"+str(m.tm_min),(str(shour[i])+":"+str(smini[i]),str(ehour[i])+":"+str(emini[i]-1))):
+            video_capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)
             # video_capture = cv2.VideoCapture("http://192.168.31.55:4747/video")
             att.clear()
             while(1):
@@ -176,11 +176,11 @@ while(True):
                             name = known_face_names[first_match_index]
 
                         # Or instead, use the known face with the smallest distance to the new face
-                            if known_face_names:
-                                face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
-                                best_match_index = np.argmin(face_distances)
-                                if matches[best_match_index]:
-                                    name = known_face_names[best_match_index]
+                        if known_face_names:
+                            face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
+                            best_match_index = np.argmin(face_distances)
+                            if matches[best_match_index]:
+                                name = known_face_names[best_match_index]
 
                         face_names.append(name)
 
@@ -213,6 +213,7 @@ while(True):
                     break
                 
                 if(m.tm_hour==ehour[i] and m.tm_min==emini[i]):
+                    #commented to save memeory
                     # print("Period Ended")
 
                     video_capture.release()
@@ -230,5 +231,7 @@ while(True):
 
                 
                     
-        # else:
-        #     print('no period')
+        else:
+            # print('no period')
+            os.system("python updater.py")
+            exit(0)

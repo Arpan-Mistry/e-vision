@@ -218,7 +218,6 @@ def Statistics():
     totalp_tupple = mycursor.fetchone()
     mysql.connection.commit()
     mycursor.close()
-    totalp_int=int(totalp_tupple[0])
     if(totalp_tupple[0])==None:
         totalp_int=0
     else:    
@@ -318,22 +317,24 @@ def Statistics3():
     pr_tuple = mycursor.fetchall()
     out = list(itertools.chain(*pr_tuple))
 
-    if(out==None):
-        return "No class attended on {dt}"
+    # if(out==None):
+    #     flash("No class attended on {dt}","warning")
+    #     return redirect("/Statistics", code=302)
 
     mysql.connection.commit()
     mycursor.close()
 
     mycursor =mysql.connection.cursor()
-    sql = "SELECT sum(np) from total where dt=%s"
+    sql = "SELECT count(np) from total where dt=%s"
     mycursor.execute(sql,(dt,))
     t_np = mycursor.fetchone()
     mysql.connection.commit()
     mycursor.close()
-    if(t_np == None):
-        return render_template('statsdaily.html',dt=dt)
+    if not out:
+        flash(f"There were no class on {dt}","warning")
+        return redirect("/Statistics")
         # return f"There were no class on {dt}"
-    print(type(out))
+    print(out)
     t_np=t_np[0]
     return render_template('statsdaily.html',t_np=t_np,out=out,eno=eno)
 

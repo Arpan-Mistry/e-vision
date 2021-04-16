@@ -21,7 +21,8 @@ while True:
     mycursor.close()
 
     if r_enroll ==None:
-        print("All entries are removed")
+        #commented to save memeory
+        # print("All entries are removed")
         
         # Starting adder buffer
 
@@ -36,7 +37,8 @@ while True:
 
 
             if enroll_name_img ==None:
-                print("All entries are updated")
+                #commented to save memeory
+                # print("All entries are updated")
                 print("calling facerecog function")
                 os.system('python facerecog.py')
                 exit(0)
@@ -61,7 +63,8 @@ while True:
                 sql_delete = "DELETE FROM buff WHERE eno = %s"
                 mycursor.execute(sql_delete,(enroll,))
                 mydb.commit()
-                print("Already exists.....")
+                #commented to save memeory
+                # print("Already exists.....")
                 continue
 
             # Making changes in main file 
@@ -147,7 +150,8 @@ while True:
         mycursor.execute(sql_delete,(r_enroll,))
         mydb.commit()
         mycursor.close()
-        print(f"removed {r_enroll} from maintable")  
+        #commented to save memeory
+        # print(f"removed {r_enroll} from maintable")  
     
     # Deleting from rbuff table
     mycursor = mydb.cursor()
@@ -155,4 +159,5 @@ while True:
     mycursor.execute(sql_delete,(r_enroll,))
     mydb.commit()
     mycursor.close()
-    print(f"removed {r_enroll} from rbuff")  
+    #commented to save memeory
+    # print(f"removed {r_enroll} from rbuff")  

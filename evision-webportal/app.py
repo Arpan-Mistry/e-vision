@@ -22,9 +22,9 @@ stats_stud=()
 
 # SQL configuration
 mysql = MySQL(app)
-app.config['MYSQL_HOST'] = 'SG-evision-4051-mysql-master.servers.mongodirector.com'
+app.config['MYSQL_HOST'] = 'sg-evision-43665.servers.mongodirector.com'
 app.config['MYSQL_USER'] = 'sgroot'
-app.config['MYSQL_PASSWORD'] = '#vlZnIKN9ooYfj5a'
+app.config['MYSQL_PASSWORD'] = 'rFLxVXDTCp8P^5OJ'
 app.config['MYSQL_DB'] = 'db1'
 
 # File Upload configuration

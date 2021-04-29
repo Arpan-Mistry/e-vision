@@ -11,9 +11,9 @@ import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 mydb = mysql.connector.connect(
-host="SG-evision-4051-mysql-master.servers.mongodirector.com",
+host="sg-evision-43665.servers.mongodirector.com",
 user="sgroot",
-password="#vlZnIKN9ooYfj5a",
+password="rFLxVXDTCp8P^5OJ",
 database="db1"
 )
 

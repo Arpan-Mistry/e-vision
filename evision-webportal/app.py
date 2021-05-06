@@ -229,7 +229,7 @@ def Statistics():
     else:
         mycursor =mysql.connection.cursor()
         sql = "SELECT count(pno) from att where eno=%s"
-        mycursor.execute(sql,eno)
+        mycursor.execute(sql,(eno,))
         attp_tupple = mycursor.fetchone()
         mysql.connection.commit()
         mycursor.close()
@@ -279,7 +279,7 @@ def Stats():
         else:
             mycursor =mysql.connection.cursor()
             sql = "SELECT count(pno) from att where eno=%s"
-            mycursor.execute(sql,eno)
+            mycursor.execute(sql,(eno,))
             attp_tupple = mycursor.fetchone()
             mysql.connection.commit()
             mycursor.close()

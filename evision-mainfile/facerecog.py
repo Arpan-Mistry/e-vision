@@ -143,20 +143,16 @@ database="db1"
 
 # who says comments are useless 
 
-__45_image = face_recognition.load_image_file(os.path.join(basedir,"student_photos/45.jpg"))
-__45_face_encoding = face_recognition.face_encodings(__45_image)[0]
 
 
 
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
-__45_face_encoding,
 ]
 
 
 known_face_names = [
-"__45",
 ]
 
 # Initialize 

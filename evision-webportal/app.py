@@ -22,9 +22,9 @@ stats_stud=()
 
 # SQL configuration
 mysql = MySQL(app)
-app.config['MYSQL_HOST'] = 'evision.mysql.database.azure.com'
-app.config['MYSQL_USER'] = 'arpanmistry@evision'
-app.config['MYSQL_PASSWORD'] = 'evision@000'
+app.config['MYSQL_HOST'] = 'hiding'
+app.config['MYSQL_USER'] = 'hiding'
+app.config['MYSQL_PASSWORD'] = 'hiding'
 # app.config['MYSQL_PORT'] = 1433
 app.config['MYSQL_DB'] = 'db1'
 

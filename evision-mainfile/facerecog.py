@@ -12,8 +12,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 mydb = mysql.connector.connect(
     host='evision.mysql.database.azure.com',
-    user='arpanmistry@evision',
-    password='evision@000',
+    user='hiding',
+    password='hiding',
     database='db1'
 )
 

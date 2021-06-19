@@ -8,8 +8,8 @@ while True:
 
     mydb = mysql.connector.connect(
     host='evision.mysql.database.azure.com',
-    user='arpanmistry@evision',
-    password='evision@000',
+    user='hiding',
+    password='hiding',
     database='db1'
     )
     

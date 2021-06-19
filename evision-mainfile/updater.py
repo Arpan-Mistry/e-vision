@@ -7,9 +7,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 while True:
 
     mydb = mysql.connector.connect(
-    host='sg-evision-43665.servers.mongodirector.com',
-    user='sgroot',
-    password='rFLxVXDTCp8P^5OJ',
+    host='evision.mysql.database.azure.com',
+    user='arpanmistry@evision',
+    password='evision@000',
     database='db1'
     )
     
